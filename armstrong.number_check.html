@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armstrong number</title>
+</head>
+<body>
+    <script>
+        // Function to calculate the power of a number
+function power(base, exponent) {
+    return Math.pow(base, exponent);
+}
+
+// Function to check if a number is an Armstrong number
+function isArmstrongNumber(number) {
+    const numString = number.toString();
+    const numDigits = numString.length;
+    let sum = 0;
+
+    for (let digit of numString) {
+        sum += power(parseInt(digit), numDigits);
+    }
+
+    return sum === number;
+}
+
+// Taking user input number you want to check
+const inputNumber = parseInt(prompt("Enter the number to check for armstrong:")) 
+if (isArmstrongNumber(inputNumber)) {
+    console.log(inputNumber + ' is an Armstrong number.');
+} else {
+    console.log(inputNumber + ' is not an Armstrong number.');
+}
+
+    </script>
+</body>
+</html>
